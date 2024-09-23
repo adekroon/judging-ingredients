@@ -1,0 +1,72 @@
+#simple code: input variable, give output 
+flour = input("Enter quantity of flour (grams):")
+if flour == 500:
+    print('right flour quantity')
+else:
+    print('wrong flour quantity') 
+
+#code v2: input variable, give output 
+flour = input("Quantity of flour (in grams):")
+
+if int(flour) == 500:
+    print('right flour quantity')
+elif int(flour) > 500:
+    print('too much flour')
+else: 
+    print('too little flour')
+
+#code: correct type of input variable 
+flour_type = input("Type of flour:")
+flourlist = ['strong white flour']
+if flour_type in flourlist:
+    print('correct flour type used')
+else: 
+    print(flour_type, "shouldn't be used. Use strong white flour.")
+
+#code: dropdown menu for correct type of input variable 
+# Import module 
+from tkinter import *
+
+# Create object 
+root = Tk() 
+
+# Adjust size 
+root.geometry( "200x200" ) 
+
+# Change the label text 
+def show(): 
+	label.config( text = clicked.get() ) 
+
+# Dropdown menu options 
+options = [ 
+	"Select",
+    "all-purpose flour", 
+	"self-raising flour", 
+	"bread flour ", 
+	"cake flour", 
+	"strong flour", 
+	"whole wheat flour", 
+	"semolina flour",
+    "rye flour",
+    "barley flour"
+] 
+
+# datatype of menu text 
+clicked = StringVar() 
+
+# initial menu text 
+clicked.set( "Select" ) 
+
+# Create Dropdown menu 
+drop = OptionMenu( root , clicked , *options ) 
+drop.pack() 
+
+# Create button, it will change label text 
+button = Button( root , text = "enter" , command = show ).pack() 
+
+# Create Label 
+label = Label( root , text = " " ) 
+label.pack() 
+
+# Execute tkinter 
+root.mainloop() 
