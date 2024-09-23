@@ -1,0 +1,33 @@
+flour = #grams
+salt = #teaspoons 
+yeast = #grams 
+baking soda = #teaspoons 
+eggs = #n=1,2,3,...
+milk = #ml
+water = #ml 
+olive oil = #tablespoons 
+vegtable oil = #tablespoons 
+
+#lines 1-9 are input variables 
+
+#specifications 
+if flour == 500:
+  print('right flour quantity')
+  else: 
+  print('wrong quantity') 
+if salt == 2:
+  print('right salt quantity')
+  else: 
+  print('wrong salt quantity') 
+if yeast == 7:
+  print('right yeast quantity')
+  else: 
+  print('wrong yeast quantity') 
+if water == 300: 
+  print('right water quantity')
+  else: 
+  print('wrong water quantity') 
+if olive oil == 3:
+  print('right olive oil quantity') 
+  else:
+  print('wrong oilve oil quantity') 
