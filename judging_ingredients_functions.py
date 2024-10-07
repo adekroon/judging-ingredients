@@ -19,9 +19,9 @@ def check_flour_quantity(num):
     if num == 500:
         return 'correct flour quantity'
     elif num > 500:
-        return 'too much flour'
+        return 'too much flour. you should use 500g of flour'
     else:
-        return 'too little flour'
+        return 'too little flour. you should use 500g of flour'
 
 
 def test_check_flour_quantity():
@@ -43,7 +43,7 @@ def check_flour_type(flour_type):
     if flour_type in correct_flourlist:
         return 'correct flour type'
     else: 
-        return "this flour type shouldn't be used"
+        return "this flour type shouldn't be used. you should use all-purpose flour, bread flour, whole wheat flour, or white whole wheat flour"
     
     
 def test_check_flour_type():
@@ -64,12 +64,12 @@ def check_water_quantity(num):
     if num == 300:
         return 'correct water quantity'
     elif num > 300: 
-        return 'too much water'
+        return 'too much water. you should use 300ml of water'
     else: 
-        return 'too little water'
+        return 'too little water. you should use 300ml of water'
     
 def test_check_water_quantity():
-    assert check_water_quantity(400)=='too much water'
+    assert check_water_quantity(400)=='too much water. you should use 300ml of water'
     
 
 def check_milk_quantity(num):
@@ -106,12 +106,12 @@ def check_salt_quantity(num):
     if num == 2:
         return 'correct salt quantity'
     elif num > 2:
-        return 'too much salt'
+        return 'too much salt. you should use 2 tsp of salt'
     else: 
-        return 'too little salt'
+        return 'too little salt. you should use 2 tsp of salt'
     
 def test_check_salt_quantity():
-    assert check_salt_quantity(1)=='too little salt'
+    assert check_salt_quantity(1)=='too little salt. you should use 2 tsp of salt'
     
 
 def check_yeast_quantity(num):
@@ -128,12 +128,12 @@ def check_yeast_quantity(num):
     if num == 7:
         return 'correct yeast quantity'
     elif num > 7:
-        return 'too much yeast'
+        return 'too much yeast. you should use 7g of yeast'
     else: 
-        return 'too little yeast'
+        return 'too little yeast. you should use 7g of yeast'
 
 def test_check_yeast_quantity():
-    assert check_yeast_quantity(6)=='too little yeast'
+    assert check_yeast_quantity(6)=='too little yeast. you should use 7g of yeast'
     
     
 def check_oil_quantity(num):
@@ -150,12 +150,12 @@ def check_oil_quantity(num):
     if num == 3:
         return 'correct oil quantity'
     elif num > 3:
-        return 'too much oil'
+        return 'too much oil. you should use 3 tbs of oil'
     else:
-        return 'too little oil'
+        return 'too little oil. you should use 3 tbs of oil'
     
 def test_check_oil_quantity():
-    assert check_oil_quantity(4)=='too much oil'
+    assert check_oil_quantity(4)=='too much oil. you should use 3 tbs of oil'
     
     
 def check_oil_type(oil_type):
@@ -173,10 +173,10 @@ def check_oil_type(oil_type):
     if oil_type in correct_oillist:
         return 'correct oil type'
     else: 
-        return "this oil type shouldn't be used"
+        return "this oil type shouldn't be used. you should use olive oil or coconut oil"
     
 def test_check_oil_type():
-    assert check_oil_type('vegetable oil')== "this oil type shouldn't be used"
+    assert check_oil_type('vegetable oil')== "this oil type shouldn't be used. you should use olive oil or coconut oil"
     
 
 def check_egg_quantity(num):
@@ -197,6 +197,42 @@ def check_egg_quantity(num):
     
 def test_check_egg_quantity():
     assert check_egg_quantity(1)=="don't need eggs"
-    
 
+
+
+
+def main():
+    """
+    user interface
+    uses defined functions to judge whether quantity and/or type of ingredients are suitable to make bread
+    several inputs will run, whose user input is stores as a variable that will run through functions which determine whether quantity/type is suitable to make bread
     
+    """
+    flourqn = input("Enter quantity of flour you want to use (in grams):")
+    print(check_flour_quantity(int(flourqn)), '\n')
+    
+    flourtype = input("Enter type of flour you want to use:")
+    print(check_flour_type(flourtype), '\n')
+    
+    waterqn = input("Enter quantity of water you want to use (in ml):")
+    print(check_water_quantity(int(waterqn)), '\n')
+    
+    milkqn = input("Enter quantity of milk you want to use (in ml):")
+    print(check_milk_quantity(int(milkqn)), '\n')
+
+    saltqn = input("Enter quantity of salt you want to use (in teaspoons):") 
+    print(check_salt_quantity(int(saltqn)), '\n')
+    
+    yeastqn = input("Enter quantity of yeast you want to use (in grams):")
+    print(check_yeast_quantity(int(yeastqn)), '\n')
+    
+    oilqn = input("Enter quantity of oil you want to use (in tablespoons):")
+    print(check_oil_quantity(int(oilqn)), '\n')
+    
+    oiltype = input("Enter type of oil you want to use:")
+    print(check_oil_type(oiltype), '\n')
+    
+    eggqn = input("Enter quantity of eggs you want to use (whole numbers):")
+    print(check_egg_quantity(int(eggqn)), '\n')
+    
+main()
