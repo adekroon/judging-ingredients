@@ -11,3 +11,6 @@ The program will run and will ask for user input for ingredients. Numbers should
 
 ### author
 Akari de Kroon - 5916313
+
+#### proof of pytest 
+<img width="851" alt="pytest output image" src="https://github.com/user-attachments/assets/384a2df5-71f6-48dd-8d62-298fc2931c7c">
